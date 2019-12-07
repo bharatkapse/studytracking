@@ -22,7 +22,7 @@
   </properties>
   <scm>
     <connection>scm:git:ssh://git@github.com/bharatkapse/studytracking.git</connection>
-    <developerConnection>scm:git:ssh://gitgithub.com/bharatkapse/studytracking.git</developerConnection>
+    <developerConnection>scm:git:ssh://git@github.com/bharatkapse/studytracking.git</developerConnection>
     <url>https://github.com/bharatkapse/studytracking.git</url>
     <tag>1.0</tag>
   </scm>
