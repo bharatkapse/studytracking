@@ -22,17 +22,17 @@ public class App {
         StudyManager stdm = new StudyManager();
 
         while (!choice.equalsIgnoreCase("quit")) {
-            String filename = "Studied.csv";
+            String filename = "studyreport.csv";
             System.out.println("Enter content type");
             System.out.println("1.studied\t 2.reffered");
             String contentType = sc.nextLine();
             if (contentType.contains("2")) {
-                filename = "Reffered.csv";
+                filename = "refferedreport.csv";
             }
 
             System.out.println("Enter your choice");
-            System.out.println("1.Insert data to csv file");
-            System.out.println("2.Display CSV file");
+            System.out.println("1.Add data to csv file");
+            System.out.println("2.Display history of added data");
             choice = sc.nextLine();
             if (choice.contains("1")) {
                 stdm.initialize(filename, "write");
@@ -53,7 +53,7 @@ public class App {
                 stdm.initialize(filename, "read");
                 stdm.showCSVContent(filename);
             }
-            System.out.println("Enter any key to continue... type quit to exit");
+            System.out.println("press any key to continue... type quit to exit");
             choice= sc.nextLine();
         }
     }
