@@ -39,4 +39,6 @@ bin/
 tmp/
 *.tmp
 *.bak
+studytracking.iml
+README.md
 

@@ -10,7 +10,8 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello Bharat!");
+
+        System.out.println("Welcome to Study Tracking!");
         Scanner sc = null;
         try {
             sc = new Scanner(System.in);
@@ -31,8 +32,10 @@ public class App {
             }
 
             System.out.println("Enter your choice");
+
             System.out.println("1.Add data to record");
             System.out.println("2.show previous records");
+
             choice = sc.nextLine();
             if (choice.contains("1")) {
                 stdm.initialize(filename, "write");
@@ -41,7 +44,9 @@ public class App {
                 while (ch.equalsIgnoreCase("yes")){
                     String[] data = stdm.readData(filename);
                     stdm.addToCSV(filename, data);
+
                     System.out.println("Do you want to add more records (yes/no)");
+
                     ch= sc.nextLine();
                     if(!ch.contains("no")){
                         ch="yes";
@@ -53,7 +58,9 @@ public class App {
                 stdm.initialize(filename, "read");
                 stdm.showCSVContent(filename);
             }
+
             System.out.println("press any key to continue..... type quit to exit");
+
             choice= sc.nextLine();
         }
     }

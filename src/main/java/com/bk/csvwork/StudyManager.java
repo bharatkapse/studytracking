@@ -17,7 +17,7 @@ public class StudyManager {
         File checkFile= new File(userDir+"/"+csvFileName);
         if(!checkFile.exists()){
             if(mode.equalsIgnoreCase("read")){
-                System.out.println("You have not entered any data till now or "+csvFileName+"file is missing");
+                System.out.println("Records are empty or "+csvFileName+"file is missing");
                 System.exit(0);
             }
             CSVWriter writer =null;
@@ -26,11 +26,11 @@ public class StudyManager {
             header[1]="Year";
             header[2]="Month";
             header[3]="Date";
-            if(csvFileName.equalsIgnoreCase("Studied.csv"))
+            if(csvFileName.equalsIgnoreCase("studied.csv"))
             header[4]="Contents Studied/Reffered";
             else
                 header[4]="Contents Reffered";
-            header[5]="Time spent(minutes)";
+            header[5]="Time spent in minutes";
             header[6]="Purpose Solved";
             header[7]="Page url/Book name/pdf link";
             try {
@@ -58,7 +58,7 @@ public class StudyManager {
            writer = new CSVWriter(new FileWriter(csvFileName, true));
            writer.writeNext(data);
            writer.close();
-           System.out.println("Data written to csv file successfully");
+           System.out.println("Record stored to file successfully");
            return true;
 
        }catch (Exception e){
@@ -92,7 +92,7 @@ public class StudyManager {
     }
     public String[] readData(String filename){
         String contents="";
-        if(filename.equalsIgnoreCase("Studied.csv")){
+        if(filename.equalsIgnoreCase("studied.csv")){
             contents="studied";
         }else{
             contents="reffred";
@@ -115,7 +115,7 @@ public class StudyManager {
         data[1]= sc.nextLine();
         System.out.println("Enter current month");
         data[2]= sc.nextLine();
-        System.out.println("Enter today's complete date");
+        System.out.println("Enter today's date");
         data[3]= sc.nextLine();
         System.out.println("Enter the contents that you "+contents);
         data[4]= sc.nextLine();
