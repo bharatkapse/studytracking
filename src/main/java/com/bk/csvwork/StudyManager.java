@@ -7,7 +7,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
-
+/** Welcome to study reporting program
+* this program manages the history of study
+*/
 public class StudyManager {
 
     public void initialize(String csvFileName, String mode){
@@ -15,7 +17,7 @@ public class StudyManager {
         File checkFile= new File(userDir+"/"+csvFileName);
         if(!checkFile.exists()){
             if(mode.equalsIgnoreCase("read")){
-                System.out.println("No data is available or file is missing");
+                System.out.println("You have not entered any data till now or "+csvFileName+"file is missing");
                 System.exit(0);
             }
             CSVWriter writer =null;
@@ -25,10 +27,10 @@ public class StudyManager {
             header[2]="Month";
             header[3]="Date";
             if(csvFileName.equalsIgnoreCase("Studied.csv"))
-            header[4]="Contents Studied";
+            header[4]="Contents Studied/Reffered";
             else
                 header[4]="Contents Reffered";
-            header[5]="Time spent in minutes";
+            header[5]="Time spent(minutes)";
             header[6]="Purpose Solved";
             header[7]="Page url/Book name/pdf link";
             try {
